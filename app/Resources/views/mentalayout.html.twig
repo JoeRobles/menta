@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets -%}
+        <link rel="canonical" href="http://menta.pe/jungle"/>
+        <link rel="publisher" href="//plus.google.com/101101957567774754574"/>
+        <meta property="fb:app_id" content="302184056577324" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Welcome to the JUNGLE!" />
+        <meta property="og:description" content="Con [menta jungle] Introdúcete en el mercado de forma efectiva, date a conocer y prevalece en la jungla."/>
+        <meta property="og:url" content="http://www.menta.pe/jungle"/>
+        <meta property="og:image" content="http://menta.pe/jungle/minijungle.png" />
+        {{ parent() }}
+        {% stylesheets output='css/jungle.css' filter='cssrewrite' debug=false
+        'bundles/app/css/jungle.styl' -%}
+        <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+        {% endstylesheets %}
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block body -%}
+        {% for type, flashMessage in app.session.flashbag.all() %}
+            <div class="alert alert-{{ type }} fade in">
+                <button class="close" data-dismiss="alert" type="button">×</button>
+                {% if flashMessage.title is defined %}
+                    <strong>{{ flashMessage.title }}</strong>
+                    {{ flashMessage.message }}
+                {% else %}
+                    {{ type }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div id="flash_message" class="alert hidden">
+            <strong id="flash_title"></strong>
+        </div>
+        <nav class="navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./">
+                        {%- image '@AppBundle/Resources/public/img/logo.png' -%}
+                        <img class="logo" src="{{ asset_url }}" title="logo" alt="logo">
+                        {%- endimage -%}
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('app_jungle_index') }}#home">Home</a></li>
+                        <li><a href="{{ path('app_jungle_index') }}#planes">Planes</a></li>
+                        <li><a href="{{ path('app_jungle_index') }}#beneficios">Beneficios</a></li>
+                        <li><a href="{{ path('app_jungle_faq') }}">Preguntas Frecuentes</a></li>
+                        <li><a href="{{ path('app_jungle_payment') }}">Formas de Pago</a></li>
+                        <li><a href="{{ path('app_jungle_contact') }}">Contáctanos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <a name="home"></a>
+        {% if app.request.get('_route') == 'app_jungle_index' %}
+            {% include('jungle/carousel.html.twig') %}
+        {% endif %}
+        <div class="container marketing">
+            {% block content %}{% endblock %}
+            <footer>
+                <p class="pull-right"><a class="glyphicon glyphicon-menu-up" href="#" id="up"></a></p>
+                <p>© 2015 [menta] Todos los derechos reservados</p>
+            </footer>
+        </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts output='js/jungle.js' debug=false
+        '@AppBundle/Resources/public/js/collapse.js' -%}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <div class="zopim">
+        <script type="text/javascript">
+        window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+        d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+        $.src="//v2.zopim.com/?35bYMkpmAKnZMmMdOcYK8Z0nF8lFkcYg";z.t=+new Date;$.
+        type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+        </script>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{
+  "name": "Menta",
+  "version": "1.0.0",
+  "homepage": "http://menta.pe/",
+  "authors": [
+    "Joe Robles <joe.robles.pdj@gmail.com>"
+  ],
+  "description": "Menta web page",
+  "main": "web/app.php",
+  "keywords": [
+    "web",
+    "page"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "mustache": "latest",
+    "normalize.css": "latest"
+  }
+}

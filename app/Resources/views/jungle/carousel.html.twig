@@ -1,0 +1,69 @@
+<div id="myCarousel" class="hidden-xs carousel slide " data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            {%- image '@AppBundle/Resources/public/img/fondosjungle1.jpg' -%}
+            <img class="first-slide" class="img-responsive" src="{{ asset_url }}" alt="First slide">
+            {%- endimage -%}
+            {%- image '@AppBundle/Resources/public/img/avatar-monkey.png' -%}
+            <img class="first-slide" src="{{ asset_url }}" id="slide" alt="">
+            {%- endimage -%}
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>
+                        {%- image '@AppBundle/Resources/public/img/title-monkeylite.png' -%}
+                        <img src="{{ asset_url }}" alt="">
+                        {%- endimage -%}
+                    </h1>
+                    <p>Ideal para negocios que recién empiezan y desean contar con presencia en Internet y una imagen profesional.</p>
+                    <p><a type="button" class="btn btn-success" href="#planes" role="button">Me interesa</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            {%- image '@AppBundle/Resources/public/img/fondosjungle2.jpg' -%}
+            <img class="second-slide" class="img-responsive" src="{{ asset_url }}" alt="Second slide">
+            {%- endimage -%}
+            {%- image '@AppBundle/Resources/public/img/avatar-fox.png' -%}
+            <img class="first-slide" src="{{ asset_url }}" id="slide" alt="">
+            {%- endimage -%}
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>
+                        {%- image '@AppBundle/Resources/public/img/title-foxpro.png' -%}
+                        <img src="{{ asset_url }}" alt="">
+                        {%- endimage -%}
+                    </h1>
+                    <p>Solución integral para emprendedores que desean manejar campañas de pago en las principales redes sociales.</p>
+                    <p><a type="button" class="btn btn-success" href="#planes" role="button">Me interesa</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            {%- image '@AppBundle/Resources/public/img/fondosjungle3.jpg' -%}
+            <img class="third-slide" class="img-responsive" src="{{ asset_url }}" alt="Third slide">
+            {%- endimage -%}
+            {%- image '@AppBundle/Resources/public/img/avatar-lion.png' -%}
+            <img class="first-slide" src="{{ asset_url }}" id="slide" alt="">
+            {%- endimage -%}
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>
+                        {%- image '@AppBundle/Resources/public/img/title-lionadvance.png' -%}
+                        <img src="{{ asset_url }}" alt="">
+                        {%- endimage -%}
+                    </h1>
+                    <p>Está especialmente diseñada para negocios que requieren algo más robusto y constante en Internet.</p>
+                    <p><a type="button" class="btn btn-success" href="#planes" role="button">Me interesa</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
